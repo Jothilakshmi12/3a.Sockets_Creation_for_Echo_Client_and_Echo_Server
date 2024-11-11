@@ -9,6 +9,18 @@ Sockets Links.
  server .
 4. Send and receive the message using the send function in socket.
 ## PROGRAM
+
+client
+```
+import socket 
+s=socket.socket() 
+s.connect(('localhost',8000)) 
+while True: 
+    msg=input("Client > ") 
+    s.send(msg.encode()) 
+    print("Server > ",s.recv(1024).decode()
+```
+
 server
 ```
 import socket 
@@ -21,16 +33,6 @@ while True:
     c.send(ClientMessage.encode())
 ```
 
-client
-```
-import socket 
-s=socket.socket() 
-s.connect(('localhost',8000)) 
-while True: 
-    msg=input("Client > ") 
-    s.send(msg.encode()) 
-    print("Server > ",s.recv(1024).decode()
-```
 ## OUPUT
 server
 ![Screenshot 2024-10-16 112333](https://github.com/user-attachments/assets/23fa5357-b91a-4733-9c8e-7ffa0b5767e5)
